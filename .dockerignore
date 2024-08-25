@@ -9,3 +9,5 @@
 Dockerfile
 \*.log
 .DS_Store
+
+.tsimp

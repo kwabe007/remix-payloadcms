@@ -6,3 +6,5 @@ node_modules
 
 # JetBrains IDE files
 .idea
+
+.tsimp
