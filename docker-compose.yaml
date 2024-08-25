@@ -1,0 +1,20 @@
+services:
+  web:
+    build: .
+    env_file:
+      - .env
+    # Override values in .env
+    environment:
+      - PORT=${CONTAINER_PORT}
+    ports:
+      - '127.0.0.1:${CONTAINER_PORT}:${CONTAINER_PORT}'
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    restart: always
+    networks:
+      - mongo
+
+networks:
+  mongo:
+    name: mongo_default
+    external: true

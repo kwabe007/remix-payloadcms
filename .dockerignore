@@ -1,0 +1,11 @@
+/node_modules
+/.cache
+/build
+/dist
+/public/build
+.env
+.idea
+
+Dockerfile
+\*.log
+.DS_Store
