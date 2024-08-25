@@ -1,8 +1,11 @@
 import { z } from 'zod'
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const schema = z.object({
-  SESSION_SECRET: z.string().min(1),
-  MONGODB_URI: z.string(),
+  PAYLOAD_SECRET: z.string().min(1),
+  MONGODB_URI: z.string().min(1),
 })
 
 const parsed = schema.safeParse(process.env)
