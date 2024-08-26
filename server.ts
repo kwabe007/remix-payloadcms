@@ -3,9 +3,11 @@ import express from "express";
 import morgan from "morgan";
 import compression from "compression";
 import payload from "payload";
+import sourceMapSupport from "source-map-support";
 import dotenv from "dotenv";
 
 dotenv.config();
+sourceMapSupport.install();
 
 void start()
 

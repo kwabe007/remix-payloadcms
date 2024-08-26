@@ -9,6 +9,9 @@ export default buildConfig({
   admin: {
     user: Users.slug,
     bundler: viteBundler(),
+    meta: {
+      favicon: '/favicon.ico',
+    },
   },
   editor: lexicalEditor(),
   db: mongooseAdapter({
