@@ -4,7 +4,6 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import path from "path";
 import Users from "./collections/Users.ts";
-import env from "./app/env.ts";
 
 export default buildConfig({
   admin: {
@@ -13,7 +12,7 @@ export default buildConfig({
   },
   editor: lexicalEditor(),
   db: mongooseAdapter({
-    url: env.MONGODB_URI
+    url: process.env.MONGODB_URI!
   }),
   collections: [Users],
   typescript: { outputFile: path.resolve(__dirname, "collection/types.ts") },

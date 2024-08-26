@@ -3,11 +3,15 @@ import express from "express";
 import morgan from "morgan";
 import compression from "compression";
 import payload from "payload";
-import env from "./app/env.ts";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 void start()
 
 async function start() {
+  const env = (await import("./env.ts")).default
+
   const app = express();
 
   app.use(compression());

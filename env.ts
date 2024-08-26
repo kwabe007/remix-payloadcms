@@ -1,7 +1,4 @@
 import { z } from 'zod'
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const schema = z.object({
   PAYLOAD_SECRET: z.string().min(1),
