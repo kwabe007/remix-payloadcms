@@ -9,6 +9,13 @@ export default buildConfig({
   admin: {
     user: Users.slug,
     bundler: viteBundler(),
+    vite: (incomingViteConfig) => ({
+      ...incomingViteConfig,
+      build: {
+        ...incomingViteConfig.build,
+        emptyOutDir: false,
+      },
+    }),
     meta: {
       favicon: '/favicon.ico',
     },
