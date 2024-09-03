@@ -6,12 +6,14 @@
   "scripts": {
     "build": "run-s \"build:*\"",
     "build:remix": "remix vite:build",
-    "build:server": "tsc --project tsconfig.server.json",
+    "build:payload": "payload build",
+    "build:server": "esbuild --bundle server.ts --platform=node --packages=external --format=esm --outfile=build/server.js",
+    "build:payload-config": "esbuild  --bundle payload.config.ts --platform=node --packages=external --outfile=build/payload.config.cjs",
     "dev": "tsx server.ts",
     "check": "run-s typecheck lint",
     "format": "prettier --write .",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "cross-env NODE_ENV=production node ./build/server.js",
+    "start": "cross-env NODE_ENV=production PAYLOAD_CONFIG_PATH=build/payload.config.cjs node ./build/server.js",
     "typecheck": "tsc"
   },
   "dependencies": {
