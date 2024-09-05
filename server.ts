@@ -22,10 +22,10 @@ async function start() {
     process.env.NODE_ENV === 'production'
       ? undefined
       : await import('vite').then((vite) =>
-        vite.createServer({
-          server: { middlewareMode: true },
-        })
-      )
+          vite.createServer({
+            server: { middlewareMode: true },
+          })
+        )
 
   // handle asset requests
   if (viteDevServer) {
@@ -56,7 +56,7 @@ async function start() {
     build: viteDevServer
       ? () => viteDevServer.ssrLoadModule('virtual:remix/server-build')
       : // @ts-ignore -- The path will exist after build
-      await import('./build/server/index.js'),
+        await import('./build/server/index.js'),
     getLoadContext(req, res) {
       return {
         // @ts-ignore -- payload & user is added to the request by payload middleware

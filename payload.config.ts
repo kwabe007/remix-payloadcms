@@ -1,9 +1,9 @@
-import { buildConfig } from "payload/config";
-import { viteBundler } from "@payloadcms/bundler-vite";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
-import { mongooseAdapter } from "@payloadcms/db-mongodb";
-import path from "path";
-import Users from "./cms/collections/Users";
+import { buildConfig } from 'payload/config'
+import { viteBundler } from '@payloadcms/bundler-vite'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { mongooseAdapter } from '@payloadcms/db-mongodb'
+import path from 'path'
+import Users from './cms/collections/Users'
 
 export default buildConfig({
   admin: {
@@ -22,8 +22,8 @@ export default buildConfig({
   },
   editor: lexicalEditor(),
   db: mongooseAdapter({
-    url: process.env.MONGODB_URI!
+    url: process.env.MONGODB_URI!,
   }),
   collections: [Users],
-  typescript: { outputFile: path.resolve(__dirname, "cms/types.ts") },
+  typescript: { outputFile: path.resolve(__dirname, 'cms/types.ts') },
 })

@@ -11,5 +11,8 @@ node_modules
 
 .tsimp
 vite.*.timestamp*.mjs
+\*.log
+
+.DS_Store
 
 Dockerfile
