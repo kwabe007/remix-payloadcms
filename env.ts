@@ -1,4 +1,10 @@
+// Note: Can't seem to import this file from payload.config.ts, env vars just end up being undefined.
+// Probably has to do with the fact that payload.config.ts is loaded by the Payload package.
+
 import { z } from 'zod'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const schema = z.object({
   PAYLOAD_SECRET: z.string().min(1),
@@ -12,4 +18,4 @@ if (!parsed.success) {
   process.exit(1)
 }
 
-export default parsed.data
+export const env = parsed.data

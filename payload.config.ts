@@ -3,7 +3,7 @@ import { viteBundler } from "@payloadcms/bundler-vite";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import path from "path";
-import Users from "./collections/Users.ts";
+import Users from "./cms/collections/Users";
 
 export default buildConfig({
   admin: {
@@ -25,5 +25,5 @@ export default buildConfig({
     url: process.env.MONGODB_URI!
   }),
   collections: [Users],
-  typescript: { outputFile: path.resolve(__dirname, "collection/types.ts") },
+  typescript: { outputFile: path.resolve(__dirname, "cms/types.ts") },
 })

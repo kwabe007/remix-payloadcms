@@ -5,7 +5,8 @@
     "**/.server/**/*.ts",
     "**/.server/**/*.tsx",
     "**/.client/**/*.ts",
-    "**/.client/**/*.tsx"
+    "**/.client/**/*.tsx",
+    "remix.env.d.ts"
   ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
@@ -25,8 +26,6 @@
     "paths": {
       "~/*": ["./app/*"]
     },
-
-    "noEmit": true,
-    "allowImportingTsExtensions": true
+    "noEmit": true
   }
 }
