@@ -1,13 +1,15 @@
-/node_modules
+node_modules
 /.cache
 /build
 /dist
 /public/build
+/media
+
 .env
+
 .idea
 
-Dockerfile
-\*.log
-.DS_Store
-
 .tsimp
+vite.*.timestamp*.mjs
+
+Dockerfile
