@@ -13,8 +13,13 @@ services:
     restart: always
     networks:
       - mongo
+    volumes:
+      - media:/app/build/media
 
 networks:
   mongo:
     name: mongo_default
     external: true
+
+volumes:
+  media:
